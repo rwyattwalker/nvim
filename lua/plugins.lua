@@ -146,9 +146,13 @@ return require('packer').startup(function(use)
   use 'RRethy/nvim-base16'
   use 'kyazdani42/nvim-palenight.lua'
   -- LSP
- use "williamboman/nvim-lsp-installer"
+ use {
+   'neovim/nvim-lspconfig',
+    config = function () require("configs.lspconfig") end,
+  }
+use "williamboman/nvim-lsp-installer"
  require("nvim-lsp-installer").setup({
-    automatic_installation = false, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
     ui = {
         icons = {
             server_installed = "✓",
@@ -157,10 +161,6 @@ return require('packer').startup(function(use)
         }
     }
 })
- use {
-    'neovim/nvim-lspconfig',
-    config = function () require("configs.lspconfig") end,
-  }
 
   --Auto Complete
   use {
