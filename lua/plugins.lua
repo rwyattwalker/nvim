@@ -76,19 +76,15 @@ return require('packer').startup(function(use)
   --Buffer Delete
   use 'famiu/bufdelete.nvim'
   -- Treesitter --
-  use {'nvim-treesitter/nvim-treesitter',
-       config = function()
-          require'nvim-treesitter.configs'.setup {
-          -- If TS highlights are not enabled at all, or disabled via `disable` prop,
-          -- highlighting will fallback to default Vim syntax highlighting
-            highlight = {
-               enable = true,
-               additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
-               },
-            ensure_installed = {'org'}, -- Or run :TSUpdate org
-            }
-       end
-  }
+  use 'nvim-treesitter/nvim-treesitter'
+    require('nvim-treesitter.configs').setup{
+        highlight = {
+           enable = true,
+           additional_vim_regex_highlighting = "false",
+           },
+        ensure_installed = {'bash', 'comment', 'css', 'dot', 'gitattributes', 'gitignore', 'graphql', 'hjson', 'html', 'http',
+        'javascript','json', 'json5', 'markdown', 'python', 'regex', 'scss', 'solidity', 'sql', 'tsx', 'typescript', 'vim'},
+    }
 
   -- Productivity --
   use 'vimwiki/vimwiki'
@@ -138,10 +134,10 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
 
   -- Syntax Highlighting and Colors --
-  use 'PotatoesMaster/i3-vim-syntax'
-  use 'kovetskiy/sxhkd-vim'
-  use 'vim-python/python-syntax'
-  use 'ap/vim-css-color'
+  --use 'PotatoesMaster/i3-vim-syntax'
+  --use 'kovetskiy/sxhkd-vim'
+ -- use 'vim-python/python-syntax'
+ -- use 'ap/vim-css-color'
 
   -- Junegunn Choi Plugins --
   use 'junegunn/goyo.vim'
