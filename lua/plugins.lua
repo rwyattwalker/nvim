@@ -55,15 +55,22 @@ return require('packer').startup(function(use)
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   vim.opt.termguicolors = true
     require("bufferline").setup{options = {
+    buffer_close_icon = '',
+    indicator = {
+        style = "none" 
+    },
     offsets = {
-      { filetype = "NvimTree", text = "", padding = 1 },
-      { filetype = "neo-tree", text = "", padding = 1 },
-      { filetype = "Outline", text = "", padding = 1 },
+        {
+            filetype = "neo-tree",
+            text = "File Explorer",
+            text_align = "center",
+            separator = true
+        }
     },
     max_name_length = 14,
     max_prefix_length = 13,
-    tab_size = 20,
-    separator_style = "thick",
+    tab_size = 30,
+    separator_style = "thin",
     },
   }
   --Buffer Delete
