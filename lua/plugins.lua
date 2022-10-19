@@ -133,12 +133,6 @@ return require('packer').startup(function(use)
   -- Tim Pope Plugins --
   use 'tpope/vim-surround'
 
-  -- Syntax Highlighting and Colors --
-  --use 'PotatoesMaster/i3-vim-syntax'
-  --use 'kovetskiy/sxhkd-vim'
- -- use 'vim-python/python-syntax'
- -- use 'ap/vim-css-color'
-
   -- Junegunn Choi Plugins --
   use 'junegunn/goyo.vim'
   use 'junegunn/limelight.vim'
